@@ -2,14 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Venus Kumar | Portfolio</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
 <header class="navbar">
   <div class="brand">Venus.</div>
+
   <nav id="nav">
     <a href="#home">Home</a>
     <a href="#education">Education</a>
@@ -17,7 +20,8 @@
     <a href="#hobbies">Hobbies</a>
     <a href="#contact">Contact</a>
   </nav>
-  <div class="hamburger" id="hamburger">☰</div>
+
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
 </header>
 
 <!-- HERO -->
@@ -38,9 +42,8 @@
         growth-driven.
       </p>
 
-      <button
-        class="cta"
-        onclick="window.open('https://in.linkedin.com/in/venus-kumar-2717a7261', '_blank')">
+      <button class="cta"
+        onclick="window.open('https://in.linkedin.com/in/venus-kumar-2717a7261','_blank')">
         Get in Touch
       </button>
     </div>
@@ -70,7 +73,7 @@
       <div class="content glass">
         <h3>Delhi University</h3>
         <p>BA English Honors</p>
-        <span>Strong foundation in communication, literature, and analysis.</span>
+        <span>Strong foundation in communication and analysis.</span>
       </div>
     </div>
 
@@ -78,29 +81,19 @@
       <div class="content glass">
         <h3>AKS Nizamuddin</h3>
         <p>ITI</p>
-        <span>Practical training with discipline and real-world exposure.</span>
+        <span>Practical training and discipline.</span>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- EDUCATION HIGHLIGHTS SLIDER -->
-<section class="slider-section">
-  <div class="slider-track">
-    <div class="slide">English Communication</div>
-    <div class="slide">Critical Thinking</div>
-    <div class="slide">Presentation Skills</div>
-    <div class="slide">Professional Writing</div>
-    <div class="slide">Practical Training</div>
-  </div>
-</section>
-
 <!-- EXPERIENCE -->
 <section class="section dark" id="experience">
   <h2>Experience</h2>
+
   <div class="cards">
-    <div class="glass reveal highlight">
+    <div class="glass highlight reveal">
       <h3>Sales Executive</h3>
       <p>Sam International</p>
       <span>Currently Working</span>
@@ -116,29 +109,22 @@
 
     <div class="timeline-item left reveal">
       <div class="content glass">
-        <h3>📖 Reading Books</h3>
-        <p>
-          I enjoy reading books focused on communication skills, personality
-          development, and self-growth.
-        </p>
+        <h3>📖 Reading</h3>
+        <p>Communication & self-growth books.</p>
       </div>
     </div>
 
     <div class="timeline-item right reveal">
       <div class="content glass">
         <h3>🧠 Self Improvement</h3>
-        <p>
-          Exploring mindset, discipline, and real-world learning.
-        </p>
+        <p>Mindset and discipline development.</p>
       </div>
     </div>
 
     <div class="timeline-item left reveal">
       <div class="content glass">
         <h3>🗣 Communication Practice</h3>
-        <p>
-          Improving confidence, clarity, and persuasion skills through practice.
-        </p>
+        <p>Confidence & persuasion skills.</p>
       </div>
     </div>
 
@@ -152,7 +138,6 @@
   <div class="contact-grid">
 
     <a href="mailto:venuskumar99grx@gmail.com" class="contact-card reveal">
-      <div class="icon">📧</div>
       <h3>Email</h3>
       <p>venuskumar99grx@gmail.com</p>
     </a>
@@ -160,7 +145,6 @@
     <a href="https://in.linkedin.com/in/venus-kumar-2717a7261"
        target="_blank"
        class="contact-card reveal">
-      <div class="icon">🔗</div>
       <h3>LinkedIn</h3>
       <p>venus-kumar</p>
     </a>
@@ -172,6 +156,11 @@
   © 2026 Venus Kumar. All Rights Reserved.
 </footer>
 
-<script src="script.js"></script>
+<script>
+function toggleMenu(){
+  document.getElementById("nav").classList.toggle("active");
+}
+</script>
+
 </body>
 </html>
