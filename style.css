@@ -2,9 +2,9 @@
    ROOT VARIABLES
 ======================= */
 :root{
-  --bg-main:#0d1117;          /* main body background */
-  --bg-section:#111827;       /* section background */
-  --bg-soft:#0f172a;          /* slider / dark sections */
+  --bg-main:#0d1117;
+  --bg-section:#111827;
+  --bg-soft:#0f172a;
   --glass:rgba(255,255,255,0.10);
   --border:rgba(255,255,255,0.22);
   --accent:#22d3ee;
@@ -18,6 +18,11 @@
   padding:0;
   box-sizing:border-box;
   font-family:'Poppins',sans-serif;
+}
+
+html, body{
+  max-width:100%;
+  overflow-x:hidden;   /* 🔥 CRITICAL */
 }
 
 body{
@@ -45,6 +50,11 @@ body{
 .brand{
   font-size:1.6rem;
   font-weight:700;
+}
+
+nav{
+  display:flex;
+  align-items:center;
 }
 
 nav a{
@@ -79,23 +89,25 @@ nav a:hover::after{
    HERO SECTION
 ======================= */
 .hero{
-  height:100vh;
+  min-height:100vh;
   display:flex;
   justify-content:center;
   align-items:center;
   background:linear-gradient(135deg,#020617,#020617,var(--bg-section));
+  padding-top:80px;
 }
 
-/* WRAPPER */
 .hero-wrapper{
   display:flex;
   align-items:center;
-  gap:220px;              /* 🔥 MORE SPACE BETWEEN IMAGE & TEXT */
+  justify-content:center;
+  gap:120px;              /* desktop spacing */
   flex-wrap:wrap;
   padding:40px;
+  width:100%;
+  max-width:1200px;
 }
 
-/* HERO IMAGE */
 .hero-image{
   width:240px;
   height:240px;
@@ -112,7 +124,6 @@ nav a:hover::after{
   object-fit:cover;
 }
 
-/* HERO TEXT */
 .hero-text{
   max-width:520px;
 }
@@ -132,7 +143,6 @@ nav a:hover::after{
   margin-bottom:28px;
 }
 
-/* CTA BUTTON */
 .cta{
   padding:12px 36px;
   border:none;
@@ -150,7 +160,7 @@ nav a:hover::after{
 }
 
 /* =======================
-   SLIDER SECTION
+   SLIDER
 ======================= */
 .slider-section{
   overflow:hidden;
@@ -199,7 +209,7 @@ nav a:hover::after{
 }
 
 /* =======================
-   GLASS CARDS
+   CARDS
 ======================= */
 .cards{
   display:flex;
@@ -224,12 +234,8 @@ nav a:hover::after{
   box-shadow:0 40px 80px rgba(34,211,238,.45);
 }
 
-.highlight{
-  border:1px solid var(--accent);
-}
-
 /* =======================
-   TIMELINE (Education + Hobbies)
+   TIMELINE
 ======================= */
 .timeline{
   position:relative;
@@ -280,7 +286,7 @@ nav a:hover::after{
 .timeline-item.right::before{ left:-8px; }
 
 /* =======================
-   CONTACT SECTION
+   CONTACT
 ======================= */
 .contact-section{
   background:var(--bg-soft);
@@ -313,11 +319,6 @@ nav a:hover::after{
   border-color:var(--accent);
 }
 
-.contact-card h3{
-  margin-bottom:10px;
-  color:var(--accent);
-}
-
 /* =======================
    FOOTER
 ======================= */
@@ -331,26 +332,60 @@ footer{
 /* =======================
    MOBILE RESPONSIVE
 ======================= */
-@media(max-width:768px){
+@media (max-width:768px){
+
   nav{
     position:absolute;
     top:65px;
     right:-100%;
     width:200px;
     background:#020617;
-    display:flex;
     flex-direction:column;
     transition:.4s;
   }
 
-  nav.active{ right:0; }
+  nav.active{
+    right:0;
+  }
 
-  nav a{ padding:15px; }
+  nav a{
+    padding:15px;
+  }
 
-  .hamburger{ display:block; }
+  .hamburger{
+    display:block;
+  }
+
+  .hero{
+    min-height:auto;
+    padding-top:120px;
+  }
 
   .hero-wrapper{
-    gap:50px;          /* mobile spacing */
+    flex-direction:column;
+    gap:30px;
+    padding:20px;
     text-align:center;
+  }
+
+  .hero-text h1{
+    font-size:2.2rem;
+  }
+
+  /* TIMELINE MOBILE FIX */
+  .timeline::before{
+    left:20px;
+  }
+
+  .timeline-item{
+    width:100%;
+    padding-left:60px;
+    padding-right:20px;
+    text-align:left;
+    left:0 !important;
+  }
+
+  .timeline-item::before{
+    left:12px;
   }
 }
